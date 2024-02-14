@@ -10,19 +10,15 @@ for test_case in range(1, T + 1):
     K, N, M = list(map(int, input().split(' ')))
     m_list = list(map(int, input().split(' ')))
     # print(K, N, M, m_list)
-    # 충전 횟수와 현재 위치 변수 할당
-    count = current = 0
+    count = t = 0
 
-    # 종점에 도착할 때까지 반복
-    while current + K < N:
-        # K 범위 안에서 현 위치를 조정하면서 이동
+    while t + K < N:
         for i in range(K, 0, -1):
-            # 현재 위치 + 이동 거리만큼 이동했을 때 충전기가 있는 정류장일 경우
-            if (current + i) in m_list:
-                # 현재 위치 변경 및 충전 횟수 더하기
-                current += i
+            # 현재 위치 + 이동 거리만큼 이동했을 때 충전기있는 경우
+            # 현재 위치를 i만큼 더하고 count
+            if (t + i) in m_list:
+                t += i
                 count += 1
-                # for 문 종료
                 break
         else:
             count = 0

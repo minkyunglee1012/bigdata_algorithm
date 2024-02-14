@@ -9,15 +9,15 @@ T = int(input())
 for test_case in range(1, T + 1):
     arr = list(map(int, input().split()))
     # 조합을 이용해서 숫자를 3개씩 나열하는 리스트 만든 후 각각의 합을 구하는 리스트를 만들자
-    perm_list = list(combinations(arr, 3))
+    comb_list = list(combinations(arr, 3))
 
-    perm_sum = []
-    for i in range(len(perm_list)):
-        perm_sum.append(sum(perm_list[i]))
-    perm_sum = list(set(perm_sum))
+    com_sum = []
+    for i in range(len(comb_list)):
+        com_sum.append(sum(comb_list[i]))
+    com_sum = list(set(com_sum))
 
     for i in range(4):
-        perm_sum.remove(max(perm_sum))
+        com_sum.remove(max(com_sum))
 
-    ans = max(perm_sum)
+    ans = max(com_sum)
     print(f"#{test_case} {ans}")
